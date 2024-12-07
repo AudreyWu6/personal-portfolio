@@ -1,0 +1,19 @@
+{
+  "name": "personal-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "scripts": {
+    "start:frontend": "npm --prefix frontend start",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:backend": "npm --prefix backend start",
+    "build:backend": "npm --prefix backend run build",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "build": "npm run build:frontend && npm run build:backend",
+    "heroku-postbuild": "npm run build"
+  },
+  "devDependencies": {}
+}
+
